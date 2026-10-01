@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data access, storage, sharing, retention, and access controls for the personal Tonal Export utility.">
+  <meta name="referrer" content="no-referrer">
+  <title>Privacy policy | Tonal Export</title>
+  <style>
+:root { color-scheme: light; --ink: #182334; --muted: #526174; --accent: #075e64; --line: #d8e2e7; --paper: #ffffff; --wash: #f4f7f8; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--wash); color: var(--ink); font: 17px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.wrap { width: min(880px, calc(100% - 40px)); margin: auto; }
+header { background: var(--paper); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; }
+.brand { color: var(--ink); font-size: 19px; font-weight: 750; text-decoration: none; }
+nav { display: flex; gap: 20px; font-size: 15px; }
+a { color: var(--accent); text-underline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+main { padding: 46px 0 36px; }
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; }
+h1 { font-size: clamp(34px, 6vw, 48px); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 20px; }
+h2 { font-size: 22px; line-height: 1.35; letter-spacing: -.015em; margin: 32px 0 10px; }
+p { margin: 0 0 16px; }
+.lead { font-size: 20px; color: var(--muted); max-width: 720px; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 26px 30px; margin: 26px 0; }
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+.notice { border-left: 4px solid var(--accent); background: #eaf3f3; padding: 18px 22px; margin: 24px 0; }
+ul { padding-left: 24px; }
+li { margin: 8px 0; }
+code { font-size: .88em; overflow-wrap: anywhere; padding: 2px 5px; border-radius: 4px; background: #edf1f3; }
+.meta, footer { color: var(--muted); font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding: 22px 0 32px; }
+footer p { margin: 5px 0; }
+@media (max-width: 540px) { header .wrap { align-items: flex-start; flex-direction: column; gap: 8px; } main { padding-top: 30px; } .card { padding: 22px; } }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./">Tonal Export</a>
+  <nav aria-label="Main navigation"><a href="./">Home</a><a href="privacy.html" aria-current="page">Privacy policy</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="eyebrow">Personal utility &middot; Data practices</p>
+<h1>Privacy policy</h1>
+<p class="meta">Last updated: September 30, 2026</p>
+<p>This policy describes <strong>Tonal Export</strong>, an independent, single-user utility maintained by the GitHub account <a href="https://github.com/cdcoulson">cdcoulson</a>. The utility runs on its owner&rsquo;s server. This public website provides information about it; the website is not the utility&rsquo;s data-storage or authentication service.</p>
+<h2>Information accessed and processed</h2>
+<p>The local utility accesses the account owner&rsquo;s Tonal workout history and available training metrics. This may include workout names and dates, exercise records, sets, repetitions, resistance, training modes, workout volume and duration, strength scores, readiness metrics, and identifiers needed to distinguish training records.</p>
+<p>When the optional Google Drive integration is enabled, rclone processes the prepared report contents and the metadata needed to create, locate, compare, and update the application&rsquo;s files and folders, such as file names, file identifiers, sizes, modification times, and checksums. It also handles the OAuth tokens needed for authorized access.</p>
+<h2>Purpose and Google permissions</h2>
+<p>The data is used to validate and archive the owner&rsquo;s training history, prepare recent-training reports, and keep an optional private Google Drive copy available for the owner&rsquo;s personal review.</p>
+<p>The Google integration requests <code>https://www.googleapis.com/auth/drive.file</code>. This is a per-file permission rather than full-Drive access. In the rclone configuration described here, access is limited to files and folders created through the application. It does not request Gmail, Contacts, Calendar, or general access to other Drive files.</p>
+<p>See <a href="https://developers.google.com/workspace/drive/api/guides/api-specific-auth">Google&rsquo;s Drive scope documentation</a> and <a href="https://rclone.org/drive/#drive-file">rclone&rsquo;s explanation of this scope</a>.</p>
+<h2>Storage and authentication</h2>
+<p>Complete exports, validation state, retained local snapshots, and prepared reports are stored on the owner&rsquo;s server. When enabled, the uploader sends only the approved reporting files to the application&rsquo;s private Google Drive folder. The owner controls the server, destination account, and sharing settings.</p>
+<p>Tonal authentication material and rclone OAuth configuration are kept in local configuration files, separate from the prepared reports. These authentication files are not intended for upload to Drive, GitHub, or an analysis service. Google sign-in takes place on Google&rsquo;s authorization pages; this website does not receive the owner&rsquo;s Google password.</p>
+<p>Local filesystem permissions and account access controls help protect these files. The owner remains responsible for securing the server, protecting configuration and backups, and reviewing cloud sharing permissions. No system can guarantee absolute security.</p>
+<h2>Sharing and use by other services</h2>
+<p>The utility does not sell training data, use it for advertising, or make the reports publicly accessible. When the optional upload is authorized, Google processes the report copies to provide Drive storage. The utility itself does not send reports to an AI provider or train machine-learning models.</p>
+<p>The owner may separately choose to share selected reports with a trainer or an analysis service, including an AI assistant, or authorize another service to read them from Drive. That is a separate, owner-directed action governed by the recipient&rsquo;s policies and the owner&rsquo;s account settings; authorizing this utility alone does not authorize an AI service.</p>
+<p>Tonal Export&rsquo;s use of information received from Google APIs is limited to the functions disclosed in this policy and must adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+<h2>Retention, revocation, and deletion</h2>
+<p>Local exports and archives remain until the owner deletes them or configured snapshot retention removes older copies. Drive reports remain until the owner deletes them; updating a report is not the same as deleting all prior revisions or backups.</p>
+<p>The owner can stop future collection or uploads by disabling the scheduled job and can revoke the application&rsquo;s Google access in <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revoking access does not automatically delete already-exported files.</p>
+<p>To remove stored copies, the owner must delete the local exports, prepared reports, retained snapshots, and relevant backups, and delete the corresponding Drive files and empty the applicable trash. Copies separately shared with other services must be managed with those services. Provider retention and backup policies may also apply.</p>
+<h2>This public website</h2>
+<p>The website contains only static application information and this privacy policy. Its pages do not include analytics scripts, tracking pixels, advertising, sign-in forms, upload forms, or application-set cookies. Personal workout records and credentials are not part of the site.</p>
+<p>The site is intended to be hosted by GitHub Pages. GitHub may process technical information about website requests, such as IP addresses and browser or request information, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Following a link to another service is subject to that service&rsquo;s policies.</p>
+<h2>Questions and changes</h2>
+<p>The owner can manage or remove the private data directly. For non-sensitive questions about these disclosures, contact the maintainer through the <a href="https://github.com/cdcoulson/tonal-export-site/issues">project issue tracker</a>. The tracker is public; never submit passwords, tokens, private workout files, or other sensitive details there.</p>
+<p>This policy should be updated if the utility&rsquo;s permissions or data practices change. The update date appears at the top of this page.</p>
+
+</main>
+<footer><div class="wrap">
+  <p>Maintained by <a href="https://github.com/cdcoulson">cdcoulson on GitHub</a> &middot; <a href="privacy.html">Privacy policy</a></p>
+  <p>Independent personal project. Not affiliated with, endorsed by, or operated by Tonal or Google.</p>
+</div></footer>
+</body>
+</html>
